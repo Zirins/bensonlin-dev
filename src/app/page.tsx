@@ -1,7 +1,11 @@
-export default function Home() {
-  return (
-      <div>
-        <h1 className="">Home</h1>
-      </div>
-  );
+import Intro from '@/components/Intro';
+import Projects from "@/components/Projects";
+
+export default function HomePage() {
+    return (
+        <>
+            <Intro />
+            <Projects />
+        </>
+    );
 }
