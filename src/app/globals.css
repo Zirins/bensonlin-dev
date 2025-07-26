@@ -1,27 +1,57 @@
+/* globals.css */
 @import "tailwindcss";
 
 /* === Light Theme === */
-@theme {
-    --color-background: #f9fafb;
-    --color-foreground: #111827;
-    --color-accent: #6366f1;
-    --color-muted: #9ca3af;
+/* === Custom Looksmaxxed Theme === */
+:root {
+    --color-background: #1F1F1F;            /* Charcoal Gray */
+    --color-foreground: #F5F5F0;            /* Ivory / soft white text */
+    --color-accent: #136F63;                /* Emerald Green (main CTA + highlights) */
+    --color-accent-foreground: #FFFFFF;     /* Always white on accent */
+    --color-link: #D4AF37;                  /* Matte Gold (link or hover highlight) */
+    --color-muted: #A0A0A0;                 /* Slightly warm-muted gray */
 
     --font-sans: ui-sans-serif, system-ui, sans-serif;
     --font-mono: ui-monospace, SFMono-Regular, monospace;
 }
 
-/* === Dark Theme === */
 @media (prefers-color-scheme: dark) {
-    @theme {
-        --color-background: #0f172a;
-        --color-foreground: #f1f5f9;
-        --color-accent: #8b5cf6;
-        --color-muted: #6b7280;
+    :root {
+        --color-background: #1F1F1F;
+        --color-foreground: #F5F5F0;
+        --color-accent: #136F63;
+        --color-accent-foreground: #FFFFFF;
+        --color-link: #D4AF37;
+        --color-muted: #A0A0A0;
     }
 }
 
-/* === Base Styling === */
+
+.text-foreground { color: var(--color-foreground); }
+.text-accent { color: var(--color-accent); }
+.text-muted { color: var(--color-muted); }
+.bg-background { background: var(--color-background); }
+.bg-accent { background: var(--color-accent); }
+.border-muted { border-color: var(--color-muted); }
+
+.theme-bg {
+    background: var(--color-background);
+    border: 1px solid var(--color-muted);
+}
+.theme-title { color: var(--color-foreground); }
+.theme-desc { color: var(--color-muted); }
+.theme-tag {
+    background: var(--color-accent);
+    color: var(--color-accent-foreground);
+}
+.theme-link { color: var(--color-link); }
+
+/* globals.css */
+.hover\:bg-accent:hover {
+    background: var(--color-accent);
+    color: var(--color-accent-foreground);
+}
+
 body {
     background-color: var(--color-background);
     color: var(--color-foreground);
@@ -31,6 +61,4 @@ body {
     line-height: 1.6;
 }
 
-html {
-    scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
