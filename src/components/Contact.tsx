@@ -4,7 +4,10 @@ import React, { useState } from "react";
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-20 px-6 bg-background text-center">
+    <section
+      id="contact"
+      className="py-20 px-6 bg-background text-center border-g"
+    >
       <h2 className="text-4xl font-bold text-foreground mb-4 tracking-wide">
         Let’s Connect
       </h2>
