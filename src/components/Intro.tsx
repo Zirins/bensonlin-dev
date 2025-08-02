@@ -4,9 +4,11 @@ export default function Intro() {
   return (
     <section
       id="intro"
-      className="min-h-screen flex flex-col justify-center items-start gap-6 px-6 max-w-3xl mx-auto"
+      className="min-h-[600px] flex flex-col justify-center items-start gap-6 px-6 max-w-3xl mx-auto"
     >
-      <h1 className="md:text-6xl font-bold text-foreground">Benson Lin</h1>
+      <h1 className="text-[80px] md:text-6xl font-bold text-foreground">
+        Benson Lin
+      </h1>
 
       <h2 className="text-2xl text-accent font-semibold tracking-wide">
         Full-Stack Developer

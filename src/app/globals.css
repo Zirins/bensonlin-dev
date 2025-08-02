@@ -1,7 +1,5 @@
-/* globals.css */
 @import "tailwindcss";
 
-/* === Light Theme === */
 /* === Custom Looksmaxxed Theme === */
 :root {
     --color-background: #1F1F1F;            /* Charcoal Gray */
@@ -9,49 +7,13 @@
     --color-accent: #136F63;                /* Emerald Green (main CTA + highlights) */
     --color-accent-foreground: #FFFFFF;     /* Always white on accent */
     --color-link: #D4AF37;                  /* Matte Gold (link or hover highlight) */
-    --color-muted: #A0A0A0;                 /* Slightly warm-muted gray */
+    --color-muted: #7A7A7A;                 /* Adjusted: Deeper muted tone for contrast */
 
     --font-sans: ui-sans-serif, system-ui, sans-serif;
     --font-mono: ui-monospace, SFMono-Regular, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --color-background: #1F1F1F;
-        --color-foreground: #F5F5F0;
-        --color-accent: #136F63;
-        --color-accent-foreground: #FFFFFF;
-        --color-link: #D4AF37;
-        --color-muted: #A0A0A0;
-    }
-}
-
-
-.text-foreground { color: var(--color-foreground); }
-.text-accent { color: var(--color-accent); }
-.text-muted { color: var(--color-muted); }
-.bg-background { background: var(--color-background); }
-.bg-accent { background: var(--color-accent); }
-.border-muted { border-color: var(--color-muted); }
-
-.theme-bg {
-    background: var(--color-background);
-    border: 1px solid var(--color-muted);
-}
-.theme-title { color: var(--color-foreground); }
-.theme-desc { color: var(--color-muted); }
-.theme-tag {
-    background: var(--color-accent);
-    color: var(--color-accent-foreground);
-}
-.theme-link { color: var(--color-link); }
-
-/* globals.css */
-.hover\:bg-accent:hover {
-    background: var(--color-accent);
-    color: var(--color-accent-foreground);
-}
-
+/* === Base Styles === */
 body {
     background-color: var(--color-background);
     color: var(--color-foreground);
@@ -61,4 +23,40 @@ body {
     line-height: 1.6;
 }
 
-html { scroll-behavior: smooth; }
+html {
+    scroll-behavior: smooth;
+}
+
+/* === Utility Classes Using Design Tokens === */
+@layer utilities {
+    /* Text */
+    .text-foreground { color: var(--color-foreground); }
+    .text-accent { color: var(--color-accent); }
+    .text-muted { color: var(--color-muted); }
+    .text-link { color: var(--color-link); }
+    .hover\:text-accent-foreground:hover { color: var(--color-accent-foreground); }
+
+    /* Background */
+    .bg-background { background-color: var(--color-background); }
+    .bg-accent { background-color: var(--color-accent); }
+    .hover\:bg-accent:hover { background-color: var(--color-accent); }
+
+    /* Borders */
+    .border-muted { border-color: var(--color-muted); }
+
+    /* Theme-specific blocks */
+    .theme-bg {
+        background-color: var(--color-background);
+        border: 1px solid var(--color-muted);
+    }
+
+    .theme-title { color: var(--color-foreground); }
+    .theme-desc { color: var(--color-muted); }
+
+    .theme-tag {
+        background-color: var(--color-accent);
+        color: var(--color-accent-foreground);
+    }
+
+    .theme-link { color: var(--color-link); }
+}
