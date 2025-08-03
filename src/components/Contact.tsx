@@ -85,7 +85,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative min-h-screen bg-background flex flex-col justify-center px-6 py-20"
+      className="relative min-h-full bg-background flex flex-col justify-center px-6 py-20"
     >
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">

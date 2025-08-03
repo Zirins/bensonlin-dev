@@ -273,32 +273,32 @@ export default function Projects() {
           ))}
         </div>
 
-        {/* More Projects CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mt-16"
-        >
-          <div className="theme-card p-8 max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold text-foreground mb-4">
-              Want to see more?
-            </h3>
-            <p className="text-muted-foreground mb-6">
-              I've built many more projects exploring different technologies and
-              solving various problems. Check out my GitHub for the complete
-              collection.
-            </p>
-            <a
-              href="https://github.com/Zirins"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="theme-button-primary inline-block px-8 py-4 hover:scale-105 transition-all duration-200"
-            >
-              🔍 Explore All Projects
-            </a>
-          </div>
-        </motion.div>
+        {/*/!* More Projects CTA *!/*/}
+        {/*<motion.div*/}
+        {/*  initial={{ opacity: 0, y: 20 }}*/}
+        {/*  whileInView={{ opacity: 1, y: 0 }}*/}
+        {/*  viewport={{ once: true }}*/}
+        {/*  className="text-center mt-16"*/}
+        {/*>*/}
+        {/*  <div className="theme-card p-8 max-w-2xl mx-auto">*/}
+        {/*    <h3 className="text-2xl font-bold text-foreground mb-4">*/}
+        {/*      Want to see more?*/}
+        {/*    </h3>*/}
+        {/*    <p className="text-muted-foreground mb-6">*/}
+        {/*      I've built many more projects exploring different technologies and*/}
+        {/*      solving various problems. Check out my GitHub for the complete*/}
+        {/*      collection.*/}
+        {/*    </p>*/}
+        {/*    <a*/}
+        {/*      href="https://github.com/Zirins"*/}
+        {/*      target="_blank"*/}
+        {/*      rel="noopener noreferrer"*/}
+        {/*      className="theme-button-primary inline-block px-8 py-4 hover:scale-105 transition-all duration-200"*/}
+        {/*    >*/}
+        {/*      🔍 Explore All Projects*/}
+        {/*    </a>*/}
+        {/*  </div>*/}
+        {/*</motion.div>*/}
       </div>
     </section>
   );
