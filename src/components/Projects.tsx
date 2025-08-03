@@ -30,7 +30,10 @@ const projectData = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-20 px-6 bg-background">
+    <section
+      id="projects"
+      className="py-20 px-6 bg-background mx-auto max-w-3xl flex flex-col items-center border-10 border-orange-500"
+    >
       <h2 className="text-4xl font-bold text-center text-foreground mb-12 theme-title">
         Projects
       </h2>
