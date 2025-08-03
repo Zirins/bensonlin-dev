@@ -102,7 +102,7 @@ export default function Timeline() {
   const currentMoment = timelineData[currentIndex];
 
   return (
-    <section className="relative min-h-screen bg-background flex flex-col justify-center px-6 py-20 overflow-hidden">
+    <section className="relative min-h-max bg-background flex flex-col justify-center px-6 py-20 overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div

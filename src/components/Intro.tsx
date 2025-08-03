@@ -29,7 +29,7 @@ export default function Intro() {
   return (
     <section
       id="intro"
-      className="relative min-h-screen max-w-7xl flex items-center px-6 mx-auto overflow-hidden"
+      className="relative min-h-full max-w-7xl flex items-center px-6 mx-auto overflow-hidden py-40"
     >
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -89,14 +89,6 @@ export default function Intro() {
                   className="object-cover w-full h-full"
                   priority
                 />
-              </div>
-
-              {/* Status Indicator */}
-              <div className="absolute bottom-8 right-8 flex items-center gap-2 bg-surface/90 backdrop-blur-sm rounded-full px-4 py-2 border border-accent/20">
-                <div className="w-3 h-3 rounded-full bg-success animate-pulse" />
-                <span className="text-sm font-medium text-foreground">
-                  Available for hire
-                </span>
               </div>
             </div>
           </div>
