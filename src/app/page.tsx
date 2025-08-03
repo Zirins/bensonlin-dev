@@ -1,7 +1,15 @@
-export default function Home() {
+import Intro from "@/components/Intro";
+import Projects from "@/components/Projects";
+import Contact from "@/components/Contact";
+import Timeline from "@/components/Timeline";
+
+export default function HomePage() {
   return (
-      <div>
-        <h1 className="">Home</h1>
-      </div>
+    <>
+      <Intro />
+      <Timeline />
+      <Projects />
+      <Contact />
+    </>
   );
 }

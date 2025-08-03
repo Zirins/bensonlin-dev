@@ -1,26 +1,207 @@
 @import "tailwindcss";
 
+/* === Refined Looksmaxxed Theme === */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    /* Primary Colors */
+    --color-background: #1F1F1F;            /* Charcoal Gray */
+    --color-surface: #2A2A2A;               /* Slightly lighter for cards/sections */
+    --color-foreground: #FAFAFA;            /* Softer white for better readability */
+    --color-accent: #136F63;                /* Emerald Green (main CTA + highlights) */
+    --color-accent-foreground: #FFFFFF;     /* Always white on accent */
+    --color-secondary: #0EA5E9;             /* Electric Blue (links + tech accent) */
+    --color-muted: #6B7280;                 /* Balanced muted tone */
+    --color-muted-foreground: #9CA3AF;      /* Lighter muted for subtle text */
+
+    /* Semantic Colors */
+    --color-success: #10B981;               /* Success green */
+    --color-warning: #F59E0B;               /* Warning amber */
+    --color-error: #EF4444;                 /* Error red */
+    --color-info: #3B82F6;                  /* Info blue */
+
+    /* Borders & Dividers */
+    --color-border: #374151;                /* Subtle borders */
+    --color-divider: #4B5563;               /* Stronger dividers */
+
+    /* Typography */
+    --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+
+    /* Spacing & Layout */
+    --border-radius: 0.5rem;
+    --border-radius-lg: 0.75rem;
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* === Base Styles === */
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* === Utility Classes Using Design Tokens === */
+@layer utilities {
+    /* Text Colors */
+    .text-foreground { color: var(--color-foreground); }
+    .text-accent { color: var(--color-accent); }
+    .text-secondary { color: var(--color-secondary); }
+    .text-muted { color: var(--color-muted); }
+    .text-muted-foreground { color: var(--color-muted-foreground); }
+    .text-success { color: var(--color-success); }
+    .text-warning { color: var(--color-warning); }
+    .text-error { color: var(--color-error); }
+    .text-info { color: var(--color-info); }
+
+    /* Background Colors */
+    .bg-background { background-color: var(--color-background); }
+    .bg-surface { background-color: var(--color-surface); }
+    .bg-accent { background-color: var(--color-accent); }
+    .bg-secondary { background-color: var(--color-secondary); }
+    .bg-success { background-color: var(--color-success); }
+    .bg-warning { background-color: var(--color-warning); }
+    .bg-error { background-color: var(--color-error); }
+    .bg-info { background-color: var(--color-info); }
+
+    /* Hover States */
+    .hover\:text-accent:hover { color: var(--color-accent); }
+    .hover\:text-secondary:hover { color: var(--color-secondary); }
+    .hover\:text-accent-foreground:hover { color: var(--color-accent-foreground); }
+    .hover\:bg-accent:hover { background-color: var(--color-accent); }
+    .hover\:bg-secondary:hover { background-color: var(--color-secondary); }
+    .hover\:bg-surface:hover { background-color: var(--color-surface); }
+
+    /* Borders */
+    .border-default { border-color: var(--color-border); }
+    .border-muted { border-color: var(--color-muted); }
+    .border-divider { border-color: var(--color-divider); }
+    .border-accent { border-color: var(--color-accent); }
+    .border-secondary { border-color: var(--color-secondary); }
+
+    /* Theme-specific Components */
+    .theme-card {
+        background-color: var(--color-surface);
+        border: 1px solid var(--color-border);
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow-sm);
+    }
+
+    .theme-card-hover {
+        background-color: var(--color-surface);
+        border: 1px solid var(--color-border);
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow-sm);
+        transition: all 0.2s ease-in-out;
+    }
+
+    .theme-card-hover:hover {
+        border-color: var(--color-accent);
+        box-shadow: var(--shadow-md);
+        transform: translateY(-1px);
+    }
+
+    .theme-button-primary {
+        background-color: var(--color-accent);
+        color: var(--color-accent-foreground);
+        border: 1px solid var(--color-accent);
+        border-radius: var(--border-radius);
+        padding: 0.5rem 1rem;
+        font-weight: 500;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .theme-button-primary:hover {
+        background-color: var(--color-accent);
+        box-shadow: var(--shadow-md);
+        transform: translateY(-1px);
+        opacity: 0.9;
+    }
+
+    .theme-button-secondary {
+        background-color: transparent;
+        color: var(--color-secondary);
+        border: 1px solid var(--color-secondary);
+        border-radius: var(--border-radius);
+        padding: 0.5rem 1rem;
+        font-weight: 500;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .theme-button-secondary:hover {
+        background-color: var(--color-secondary);
+        color: var(--color-accent-foreground);
+    }
+
+    .theme-tag {
+        background-color: var(--color-accent);
+        color: var(--color-accent-foreground);
+        padding: 0.25rem 0.5rem;
+        border-radius: calc(var(--border-radius) * 0.5);
+        font-size: 0.875rem;
+        font-weight: 500;
+    }
+
+    .theme-tag-secondary {
+        background-color: var(--color-surface);
+        color: var(--color-secondary);
+        border: 1px solid var(--color-secondary);
+        padding: 0.25rem 0.5rem;
+        border-radius: calc(var(--border-radius) * 0.5);
+        font-size: 0.875rem;
+        font-weight: 500;
+    }
+
+    .theme-link {
+        color: var(--color-secondary);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s ease-in-out;
+    }
+
+    .theme-link:hover {
+        color: var(--color-accent);
+    }
+
+    .theme-code {
+        background-color: var(--color-surface);
+        color: var(--color-foreground);
+        font-family: var(--font-mono);
+        padding: 0.25rem 0.5rem;
+        border-radius: calc(var(--border-radius) * 0.5);
+        font-size: 0.875rem;
+        border: 1px solid var(--color-border);
+    }
+
+    /* Focus States for Accessibility */
+    .focus-visible\:ring-accent:focus-visible {
+        outline: 2px solid var(--color-accent);
+        outline-offset: 2px;
+    }
+
+    .focus-visible\:ring-secondary:focus-visible {
+        outline: 2px solid var(--color-secondary);
+        outline-offset: 2px;
+    }
+
+    /* Gradients */
+    .gradient-accent {
+        background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-secondary) 100%);
+    }
+
+    .gradient-text {
+        background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-secondary) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
 }
