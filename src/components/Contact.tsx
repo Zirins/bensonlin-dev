@@ -294,12 +294,6 @@ export default function Contact() {
                 )}
               </button>
             </form>
-
-            <div className="text-center">
-              <p className="text-sm text-muted">
-                Form will open your email client with the message pre-filled
-              </p>
-            </div>
           </div>
         </div>
       </div>
